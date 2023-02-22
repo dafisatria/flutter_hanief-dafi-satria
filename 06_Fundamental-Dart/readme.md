@@ -1,0 +1,4 @@
+## Resume Materi KMFlutter - Fundamental Dart
+- Dart merupakan bahasa pemrograman yang dirancang untuk membuat aplikasi dari sisi client (front end) agar dapat berjalan dengan cepat.
+- Pada dart cara menampilkan suatu output bisa menggunakan **print** ataupun **stdout.write**. Untuk menyimpan data bisa menggunakan **var** namun tidak disarankan dan bisa menggunakan tipe data pada umumnya.
+- Untuk menggunakan variabel yang bersifat paten atau tidak dapat diubah atau bisa dibilang konstanta dapat mengggunakan **final**. Untuk operator sendiri seperti pada bahasa pemrograman yang sudah saya pelajari sebelumnya, yaitu java.
