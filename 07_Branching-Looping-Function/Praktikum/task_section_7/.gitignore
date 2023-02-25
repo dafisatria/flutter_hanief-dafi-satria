@@ -4,8 +4,8 @@
 .md
 .yaml
 .lock
-lib/
-test/
+lib
+test
 
 # Conventional directory for build output.
 build/
