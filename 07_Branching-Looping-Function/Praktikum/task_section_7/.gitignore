@@ -1,0 +1,11 @@
+# Files and directories created by pub.
+.dart_tool/
+.packages
+.md
+.yaml
+.lock
+.lib/
+.test/
+
+# Conventional directory for build output.
+build/
