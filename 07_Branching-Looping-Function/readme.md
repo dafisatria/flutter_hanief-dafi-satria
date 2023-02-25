@@ -1,0 +1,4 @@
+## Resume Materi KMFlutter - Branching Looping Function
+- Seperti pada bahasa pemrograman lainnya, dart juga memiliki beberapa syntax yang terbilang mirip untuk melakukan branching, looping, dan function.
+- Untuk melalukan branching sendiri ada syntax if, else if, dan else. Lalu untuk looping sendiri ada beberapa jenis alur seperti for, while, dan do-while.
+- Untuk melalukan looping terkadang ada suatu kondisi kita tidak ingin menampilkan beberapa kondisi tersebut, maka dari itu ada fitur bernama break yang digunakan untuk menghentikan seluruh kode program selama syarat tertentu memenuhi dan continue yang digunakan untuk menghentikan satu proses dan dilanjutkan ke proses selanjutnya selama syarat tertentu memenuhi. Lalu untuk function sendiri digunakan untuk membuat suatu perintah yang bisa digunakan berulang kali dan tempatnya ada diluar fungsi main yang nantinya akan dipanggil di fungsi main agar bisa menampilkan output.
