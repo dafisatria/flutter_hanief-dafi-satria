@@ -1,0 +1,4 @@
+## Resume Materi KMFlutter – Dart Object Oriented Programming 1
+- Object Oriented Programming atau biasa kita sebut OOP merupakan program yang disusun dengan bentuk abstraksi yang biasa kita kenal dengan class.
+- Class merupakan sebuah abstraksi dari suatu object. Didalam class sendiri terdapat property dan juga method. Agar class bisa digunakan dalam fungsi main maka kita perlu membuat suatu object. Object sendiri biasa disebut sebagai instance of class.
+- Property merupakan ciri-ciri yang terdapat pada class. Bentuknya sama seperti pada variabel yang biasa kita gunakan. Untuk mengakses property pada fungsi main perlu melalui sebuah object yang sudah kita buat. Lalu ada method yang merupakan sifat dari suatu class yang dapat mengerjakan aktivitas tertentu. Bentuknya sama seperti pada fungsi yang biasa kita gunakan. Untuk mengakses method pada fungsi main perlu melalui sebuah object juga.
