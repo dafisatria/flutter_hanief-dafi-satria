@@ -5,4 +5,3 @@
 
 ## Soal Prioritas 1
 1. Grab, Alibaba, Bibit
-2. 
