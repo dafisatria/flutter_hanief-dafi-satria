@@ -1,0 +1,4 @@
+## Resume Materi KMFlutter - Platform Widget
+- Pada pengembangan aplikasi menggunakan flutter terdapat 2 widget dasar yang dapat digunakan, yaitu Material App dan Cupertino App. Material App digunakan untuk mengembangkan aplikasi android sedangkan Cupertino App digunakan untuk mengembangkan aplikasi IOS.
+- Pada Material App kita dapat menggunakan Scaffold sebagai widget dasar halaman yang nantinya akan kita bangun pada bagian **home :**. Pada Scaffold sendiri terdapat struktur dasar, yaitu appBar, drawer, body, dan bottomNavigationBar.
+- Pada Cupertino App kita dapat menggunakan CupertinoPageScaffold sebagai widget dasar halaman yang nantinya akan kita bangun pada bagian **home :**. Pada CupertinoPageScaffold sendiri terdapat struktur dasar, yaitu navigationBar dan child. 
