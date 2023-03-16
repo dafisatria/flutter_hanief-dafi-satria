@@ -5,6 +5,18 @@ class ListPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const data = [
+      {"username": "PurplePenguin22", "phone": "(555) 123-4567"},
+      {"username": "GreenGiraffe99", "phone": "(555) 234-5678"},
+      {"username": "SilverSunshine11", "phone": "(555) 345-6789"},
+      {"username": "BlueButterfly44", "phone": "(555) 456-7890"},
+      {"username": "GoldenDragonfly77", "phone": "(555) 567-8901"},
+      {"username": "RedRainbow66", "phone": "(555) 678-9012"},
+      {"username": "OrangeMeadow55", "phone": "(555) 789-0123"},
+      {"username": "YellowNightfall33", "phone": "(555) 890-1234"},
+      {"username": "BlackStarlight88", "phone": "(555) 901-2345"},
+      {"username": "PinkMoonstone77", "phone": "(555) 012-3456"}
+    ];
     return Scaffold(
       appBar: AppBar(
         title: const Text('MaterialApp'),
@@ -21,100 +33,21 @@ class ListPage extends StatelessWidget {
           ],
         ),
       ),
-      body: ListView(
-        children: const [
-          ListTile(
-            leading: ExcludeSemantics(
-              child: CircleAvatar(
-                backgroundColor: Colors.green,
-                child: Text(
-                  'L',
-                  style: TextStyle(color: Colors.white),
-                ),
+      body: ListView.builder(
+        itemCount: data.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            leading: CircleAvatar(
+              backgroundColor: Colors.green,
+              child: Text(
+                data[index]['username']![0],
+                style: const TextStyle(color: Colors.white),
               ),
             ),
-            title: Text('Leanne Graham'),
-            subtitle: Text('1-770-736-8031 x56442'),
-          ),
-          ListTile(
-            leading: ExcludeSemantics(
-              child: CircleAvatar(
-                backgroundColor: Colors.green,
-                child: Text(
-                  'E',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-            ),
-            title: Text('Ervin Howell'),
-            subtitle: Text('010-692-6593 x09125'),
-          ),
-          ListTile(
-            leading: ExcludeSemantics(
-              child: CircleAvatar(
-                backgroundColor: Colors.green,
-                child: Text(
-                  'C',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-            ),
-            title: Text('Clementine Bauch'),
-            subtitle: Text('1-463-123-4447'),
-          ),
-          ListTile(
-            leading: ExcludeSemantics(
-              child: CircleAvatar(
-                backgroundColor: Colors.green,
-                child: Text(
-                  'P',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-            ),
-            title: Text('Patricia Lebsack'),
-            subtitle: Text('493-170-9623 x156'),
-          ),
-          ListTile(
-            leading: ExcludeSemantics(
-              child: CircleAvatar(
-                backgroundColor: Colors.green,
-                child: Text(
-                  'C',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-            ),
-            title: Text('Chelsey Dietrich'),
-            subtitle: Text('(254)954-1289'),
-          ),
-          ListTile(
-            leading: ExcludeSemantics(
-              child: CircleAvatar(
-                backgroundColor: Colors.green,
-                child: Text(
-                  'M',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-            ),
-            title: Text('Mrs. Dennis Schulist'),
-            subtitle: Text('1-477-935-8478 x6430'),
-          ),
-          ListTile(
-            leading: ExcludeSemantics(
-              child: CircleAvatar(
-                backgroundColor: Colors.green,
-                child: Text(
-                  'K',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-            ),
-            title: Text('Kurtis Weissnat'),
-            subtitle: Text('210.067.6132'),
-          ),
-        ],
+            title: Text('${data[index]['username']}'),
+            subtitle: Text('${data[index]['phone']}'),
+          );
+        },
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const [
