@@ -5,6 +5,15 @@ class ExplorationPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const data = [
+      'Learn Flutter',
+      'Learn ReactJS',
+      'Learn VueJS',
+      'Learn Tailwind CSS',
+      'Learn UI/UX',
+      'Learn Figma',
+      'Learn Digital Marketing',
+    ];
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -18,51 +27,18 @@ class ExplorationPage extends StatelessWidget {
           ],
           backgroundColor: Theme.of(context).colorScheme.primary,
         ),
-        body: ListView(
-          children: const [
-            ListTile(
-              title: Text('Learn Flutter'),
-            ),
-            Divider(
+        body: ListView.separated(
+          itemCount: data.length,
+          itemBuilder: (context, index) {
+            return ListTile(
+              title: Text(data[index]),
+            );
+          },
+          separatorBuilder: (context, index) {
+            return const Divider(
               indent: 16,
-            ),
-            ListTile(
-              title: Text('Learn ReactJS'),
-            ),
-            Divider(
-              indent: 16,
-            ),
-            ListTile(
-              title: Text('Learn VueJS'),
-            ),
-            Divider(
-              indent: 16,
-            ),
-            ListTile(
-              title: Text('Learn Tailwind CSS'),
-            ),
-            Divider(
-              indent: 16,
-            ),
-            ListTile(
-              title: Text('Learn UI/UX'),
-            ),
-            Divider(
-              indent: 16,
-            ),
-            ListTile(
-              title: Text('Learn Figma'),
-            ),
-            Divider(
-              indent: 16,
-            ),
-            ListTile(
-              title: Text('Learn Digital Marketing'),
-            ),
-            Divider(
-              indent: 16,
-            ),
-          ],
+            );
+          },
         ),
         floatingActionButton: FloatingActionButton(
             onPressed: () {},
