@@ -1,0 +1,4 @@
+## Resume Materi KMFlutter - Flutter Form
+- Untuk membuat sebuah form pada flutter kita perlu menggunakan state management sehingga perlu menggunakan stateful.
+- Untuk menerima input data dari pengguna ada banyak cara, seperti menggunakan text field, radio, checkbox, dropdown. Dalam sebuah aplikasi juga pasti ada button untuk melakukan sesuatu saat ditekan. Ada banyak jenisnya, yaitu seperti elevatedbutton dan iconbutton.
+- Selain dari metode diatas, tentu saja ada beberapa metode menerima input lain yang bisa menggunakan packages third party yang bisa didapatkan dari pub.dev. Seperti contoh ada date picker, yaitu berupa widget yang dimana user dapat memasukkan tanggal. Untuk menampilkan tanggal agar bisa dipilih bisa menggunakan fungsi showDatePicker. Lalu ada color picker, yaitu fungsinya sama seperti date picker, hanya saja seperti namanya yaitu untuk memilih warna. Lalu ada file picker yaitu untuk mengakses file yang ada pada device. 
