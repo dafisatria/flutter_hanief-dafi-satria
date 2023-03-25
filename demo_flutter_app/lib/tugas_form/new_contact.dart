@@ -41,6 +41,7 @@ class _MyContactState extends State<MyContact> {
   Color _currentColor = Color(0xff6200EE);
   String textt = '';
   dynamic placeholder = NetworkImage('');
+  bool profile = true;
 
   void editContact(int index) {
     setState(() {
@@ -86,19 +87,25 @@ class _MyContactState extends State<MyContact> {
                   side: BorderSide(
                       color: listOfContact[index].colors, width: 1.5),
                 ),
-                leading: CircleAvatar(
-                  backgroundColor: Colors.transparent,
-                  child: SizedBox(
-                    width: 60,
-                    height: 60,
-                    child: ClipOval(
-                      child: Image(
-                        image: listOfContact[index].file,
-                        fit: BoxFit.cover,
+                leading: (listOfContact[index].file == null)
+                    ? CircleAvatar(
+                        backgroundColor: Color(0xffEADDFF),
+                        foregroundColor: Color(0xff21005D),
+                        child: Text(listOfContact[index].name[0]),
+                      )
+                    : CircleAvatar(
+                        backgroundColor: Colors.transparent,
+                        child: SizedBox(
+                          width: 60,
+                          height: 60,
+                          child: ClipOval(
+                            child: Image(
+                              image: listOfContact[index].file,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
                       ),
-                    ),
-                  ),
-                ),
                 title: Text(
                   listOfContact[index].name,
                   style: const TextStyle(
@@ -158,7 +165,8 @@ class _MyContactState extends State<MyContact> {
         key: formKey,
         child: SingleChildScrollView(
           child: Container(
-            padding: const EdgeInsets.only(left: 17, top: 30, right: 17),
+            padding:
+                const EdgeInsets.only(left: 17, top: 30, right: 17, bottom: 17),
             child: Center(
               child: Column(
                 children: [
