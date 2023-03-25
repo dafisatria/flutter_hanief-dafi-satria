@@ -1,0 +1,4 @@
+## Resume Materi KMFlutter - Flutter Navigation
+- Agar bisa berpindah dari satu halaman ke halaman lain kita sangat memerlukan navigation.
+- Ada 2 navigation dasar yang bisa digunakan pada flutter, yaitu Navigator.push() dan Navigator.pop(). Navigator.push() berguna untuk berpindah pada halaman tujuan. Navigator.pop() berguna untuk kembali ke halaman sebelumnya. Terkadang kita juga perlu membawa data saat ingin berpindah ke halaman selanjutnya. Karena itu kita perlu memberikan parameter pada halaman tujuan.
+- Agar lebih mudah mengidentifikasi tiap halaman maka kita perlu menggunakan route. Jika ingin berpindah ke halaman selanjutnya bisa menggunakan Navigator.pushNamed(). Route bisa kita daftarkan pada MaterialApp. Selain itu ada initialRoute sebagai halaman awal saat aplikasi dijalankan. Kemudian jika kita ingin mengirimkan data pada halaman selanjutnya kita bisa menggunakann arguments
