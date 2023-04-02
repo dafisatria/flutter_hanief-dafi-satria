@@ -1,0 +1,4 @@
+## Resume Materi KMFlutter - Flutter State Management (BLoC)
+- BLoC memisahkan antara UI dengan business logic. pada BLoC sendiri terdapat 3 bagian, yaitu event atau sederhananya input dari pengguna, lalu ada BLoC itu sendiri yang berfungsi sebagai mesin atau logic ditampung, lalu yang terakhir ada state atau output yang akan ditampilkan ke pengguna.
+- Stream sendiri merupakan aktor utama dalam BLoC. Stream sendiri berfungsi sebagai jalur berjalannya data.
+- Setiap project yang akan dibuat, kita perlu membuat business logic di folder tersendiri. Setelah dibuat kita daftarkan pada fungsi main dengan melakukan wrap pada material design dengan sebuah widget BlocProvider. Setelah itu kita bisa akses pada screen yang kita inginkan. Jika pada Provider menggunakan consumer untuk menjalankan perubahan yang akan dijalankan, maka pada BLoC menggunakan BlocBuilder.
