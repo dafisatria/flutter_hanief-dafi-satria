@@ -18,18 +18,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
+    // return MultiProvider(
+    //   providers: [
+    //     ChangeNotifierProvider(
+    //       create: (_) => ContactProvider(),
+    //     ),
+    //   ],
+    return MultiBlocProvider(
       providers: [
-        ChangeNotifierProvider(
-          create: (_) => ContactProvider(),
+        BlocProvider<GalleryBloc>(
+          create: (context) => GalleryBloc(),
         ),
       ],
-      // return MultiBlocProvider(
-      //   providers: [
-      //     BlocProvider<GalleryBloc>(
-      //       create: (context) => GalleryBloc(),
-      //     ),
-      //   ],
       child: MaterialApp(
         theme: ThemeData(
           colorScheme: ColorScheme.fromSwatch().copyWith(
@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         // // initialRoute: '/',
         routes: {
-          '/': (_) => const MyContact(),
+          '/': (_) => const ImageGallery(),
           // '/Image': (_) => const ImageGallery(),
           // '/Contacts': (_) => const MyContact(),
         },
