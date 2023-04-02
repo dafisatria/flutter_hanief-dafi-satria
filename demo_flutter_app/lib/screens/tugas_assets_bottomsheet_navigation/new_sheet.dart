@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class ImageSheet extends StatelessWidget {
   final parameter;
@@ -13,13 +11,12 @@ class ImageSheet extends StatelessWidget {
         title: const Text('Halo!'),
         leading: IconButton(
           onPressed: () {
-            Navigator.pushReplacementNamed(context, '/Image');
+            Navigator.popUntil(context, ModalRoute.withName('/'));
           },
           icon: const Icon(Icons.arrow_back_outlined),
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(20),
+      body: Center(
         child: Image.asset('$parameter'),
       ),
     );

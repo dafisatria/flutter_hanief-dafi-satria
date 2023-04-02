@@ -1,19 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:demo_flutter_app/models/data_layout_exploration.dart';
 
 class ExplorationPage extends StatelessWidget {
   const ExplorationPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    const data = [
-      'Learn Flutter',
-      'Learn ReactJS',
-      'Learn VueJS',
-      'Learn Tailwind CSS',
-      'Learn UI/UX',
-      'Learn Figma',
-      'Learn Digital Marketing',
-    ];
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
