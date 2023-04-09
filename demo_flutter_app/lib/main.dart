@@ -5,6 +5,9 @@ import 'package:demo_flutter_app/screens/tugas_form/list_contact.dart';
 import 'package:demo_flutter_app/screens/tugas_form/new_contact.dart';
 import 'package:demo_flutter_app/screens/tugas_layout_widget/exploration_app.dart';
 import 'package:demo_flutter_app/providers/new_contact_providers.dart';
+import 'package:demo_flutter_app/screens/tugas_rest_api/soal_prioritas_1/contact_request_screen.dart';
+import 'package:demo_flutter_app/screens/tugas_rest_api/soal_prioritas_1/post_request_2.dart';
+import 'package:demo_flutter_app/screens/tugas_rest_api/soal_prioritas_2/image_generator.dart';
 import 'package:demo_flutter_app/screens/tugas_storage/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -37,7 +40,7 @@ class MyApp extends StatelessWidget {
           ),
           debugShowCheckedModeBanner: false,
           routes: {
-            '/': (_) => const LoginScreen(),
+            '/': (_) => const ImageGenerator(),
             '/list-contacts': (_) => const ListContact(),
             '/create-contacts': (_) => const MyContact(),
           },
