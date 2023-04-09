@@ -5,6 +5,7 @@ import 'package:demo_flutter_app/screens/tugas_form/list_contact.dart';
 import 'package:demo_flutter_app/screens/tugas_form/new_contact.dart';
 import 'package:demo_flutter_app/screens/tugas_layout_widget/exploration_app.dart';
 import 'package:demo_flutter_app/providers/new_contact_providers.dart';
+import 'package:demo_flutter_app/screens/tugas_storage/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -20,36 +21,26 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(
-          create: (_) => ContactProvider(),
-        ),
-      ],
-      // return MultiBlocProvider(
-      //   // providers: [
-      //   //   BlocProvider<GalleryBloc>(
-      //   //     create: (context) => GalleryBloc(),
-      //   //   ),
-      //   // ],
-      child: MaterialApp(
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSwatch().copyWith(
-            primary: const Color(0xff6200EE),
+        providers: [
+          ChangeNotifierProvider.value(
+            value: ContactProvider(),
           ),
-          floatingActionButtonTheme: const FloatingActionButtonThemeData(
-            backgroundColor: Color(0xff6200EE),
+        ],
+        child: MaterialApp(
+          theme: ThemeData(
+            colorScheme: ColorScheme.fromSwatch().copyWith(
+              primary: const Color(0xff6200EE),
+            ),
+            floatingActionButtonTheme: const FloatingActionButtonThemeData(
+              backgroundColor: Color(0xff6200EE),
+            ),
           ),
-        ),
-        debugShowCheckedModeBanner: false,
-        // // initialRoute: '/',
-        routes: {
-          '/': (_) => const ListContact(),
-          // '/Image': (_) => const ImageGallery(),
-          '/Contacts': (_) => const MyContact(),
-        },
-        // home: const ImageGallery(),
-      ),
-      // );
-    );
+          debugShowCheckedModeBanner: false,
+          routes: {
+            '/': (_) => const LoginScreen(),
+            '/list-contacts': (_) => const ListContact(),
+            '/create-contacts': (_) => const MyContact(),
+          },
+        ));
   }
 }
