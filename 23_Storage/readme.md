@@ -1,0 +1,4 @@
+## Resume Materi KMFlutter - Storage
+- Untuk menyimpan suatu data yang didapat dari aplikasi yang sudah dibuat, dapat disimpan pada penyimpanan lokal. Terdapat 2 jenis penyimpanan lokal yang bisa digunakan, yaitu menggunakan database sqlite dan shared preferences.
+- Shared Preferences merupakan suatu package yang digunakan untuk menyimpan data yang bersifat sederhana. Maksud dari sederhana disini yaitu package ini hanya dapat menyimpan data dengan tipe string, integer, dan boolean. Format penyimpanannya sendiri menggunakan format key-value.
+- SQLite merupakan database untuk menyimpan data yang bersifat besar pada local device. Seluruh jenis tipe data bisa disimpan ke dalam SQLite. Seperti database pada umumnya, SQLite mendukung CRUD.
