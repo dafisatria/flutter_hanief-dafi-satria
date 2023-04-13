@@ -1,8 +1,6 @@
 import 'package:demo_flutter_app/services.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class ImageGenerator extends StatefulWidget {
@@ -51,12 +49,12 @@ class _ImageGeneratorState extends State<ImageGenerator> {
               },
               child: const Text('GET'),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Container(
-              margin: EdgeInsets.only(top: 20),
-              decoration: BoxDecoration(
+              margin: const EdgeInsets.only(top: 20),
+              decoration: const BoxDecoration(
                   shape: BoxShape.circle, color: Color(0xff6200EE)),
               child: IconButton(
                 onPressed: () {

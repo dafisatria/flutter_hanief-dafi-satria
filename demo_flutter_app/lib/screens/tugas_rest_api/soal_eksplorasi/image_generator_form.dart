@@ -1,8 +1,6 @@
 import 'package:demo_flutter_app/services.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class ImageGeneratorForm extends StatefulWidget {
@@ -33,12 +31,12 @@ class _ImageGeneratorFormState extends State<ImageGeneratorForm> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 70),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 70),
           child: Column(
             children: [
               Container(
                 decoration: BoxDecoration(border: Border.all()),
-                margin: EdgeInsets.only(bottom: 20),
+                margin: const EdgeInsets.only(bottom: 20),
                 child: (service.svg.isEmpty)
                     ? Image.network(
                         'https://womens-southerngolfassociation.org/wp-content/uploads/2021/10/Image-Not-Available.png')
@@ -50,7 +48,7 @@ class _ImageGeneratorFormState extends State<ImageGeneratorForm> {
                   labelText: 'Name',
                 ),
               ),
-              SizedBox(height: 40),
+              const SizedBox(height: 40),
               ElevatedButton(
                 onPressed: () async {
                   await get();

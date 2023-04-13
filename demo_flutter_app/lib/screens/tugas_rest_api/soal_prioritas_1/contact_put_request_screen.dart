@@ -1,11 +1,8 @@
-import 'package:demo_flutter_app/models/contact_post_models.dart';
 import 'package:demo_flutter_app/models/contact_put_models.dart';
 import 'package:demo_flutter_app/services.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class ContactPutScreen extends StatefulWidget {
   const ContactPutScreen({super.key});
@@ -45,7 +42,7 @@ class _ContactPutScreenState extends State<ContactPutScreen> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(20),
+          padding: const EdgeInsets.all(20),
           child: Form(
             key: formKey,
             child: Column(
@@ -71,7 +68,7 @@ class _ContactPutScreenState extends State<ContactPutScreen> {
                     }
                   },
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 TextFormField(
@@ -90,7 +87,7 @@ class _ContactPutScreenState extends State<ContactPutScreen> {
                     }
                   },
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 TextFormField(
@@ -109,7 +106,7 @@ class _ContactPutScreenState extends State<ContactPutScreen> {
                     }
                   },
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 ElevatedButton(
@@ -126,7 +123,7 @@ class _ContactPutScreenState extends State<ContactPutScreen> {
                   },
                   child: const Text('Put'),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 Container(
@@ -181,8 +178,8 @@ class _ContactPutScreenState extends State<ContactPutScreen> {
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 20),
-                  decoration: BoxDecoration(
+                  margin: const EdgeInsets.only(top: 20),
+                  decoration: const BoxDecoration(
                       shape: BoxShape.circle, color: Color(0xff6200EE)),
                   child: IconButton(
                     onPressed: () {
