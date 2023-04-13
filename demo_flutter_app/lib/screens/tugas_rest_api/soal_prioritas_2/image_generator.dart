@@ -30,16 +30,42 @@ class _ImageGeneratorState extends State<ImageGenerator> {
       appBar: AppBar(
         title: const Text('Image Generator'),
       ),
-      body: Padding(
-        padding: EdgeInsets.all(10),
+      body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SvgPicture
+            Container(
+              decoration: BoxDecoration(border: Border.all()),
+              margin: const EdgeInsets.only(bottom: 20),
+              child: (service.svg.isEmpty)
+                  ? Image.network(
+                      'https://womens-southerngolfassociation.org/wp-content/uploads/2021/10/Image-Not-Available.png')
+                  : SvgPicture.string(service.svg, height: 300),
+            ),
             ElevatedButton(
-                onPressed: () async {
-                  await get();
+              onPressed: () async {
+                await get();
+                setState(() {
+                  service.svg;
+                });
+              },
+              child: const Text('GET'),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 20),
+              decoration: BoxDecoration(
+                  shape: BoxShape.circle, color: Color(0xff6200EE)),
+              child: IconButton(
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/image-generator-form');
                 },
-                child: const Text('GET'))
+                icon: const Icon(Icons.arrow_forward_ios_rounded),
+                color: Colors.white,
+              ),
+            ),
           ],
         ),
       ),
