@@ -1,9 +1,7 @@
-import 'package:demo_flutter_app/providers/new_contact_providers.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class DetailContact extends StatelessWidget {
+  // ignore: prefer_typing_uninitialized_variables
   final parameter;
   const DetailContact({super.key, required this.parameter});
 
@@ -11,7 +9,7 @@ class DetailContact extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Detail Contact'),
+          title: const Text('Detail Contact'),
         ),
         body: Padding(
           padding: const EdgeInsets.all(20),

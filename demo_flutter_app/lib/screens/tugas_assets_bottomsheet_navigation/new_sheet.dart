@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ImageSheet extends StatelessWidget {
+  // ignore: prefer_typing_uninitialized_variables
   final parameter;
   const ImageSheet({Key? key, required this.parameter}) : super(key: key);
 
