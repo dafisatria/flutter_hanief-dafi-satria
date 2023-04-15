@@ -1,50 +1,32 @@
-import 'package:demo_flutter_app/models/contact_post_models.dart';
-import 'package:demo_flutter_app/services.dart';
+import 'package:demo_flutter_app/model/contact_put_models.dart';
+import 'package:demo_flutter_app/model/api/services_api.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class ContactPostScreen extends StatefulWidget {
-  const ContactPostScreen({super.key});
+class ContactPutScreen extends StatefulWidget {
+  const ContactPutScreen({super.key});
 
   @override
-  State<ContactPostScreen> createState() => _ContactPostScreenState();
+  State<ContactPutScreen> createState() => _ContactPutScreenState();
 }
 
-class _ContactPostScreenState extends State<ContactPostScreen> {
+class _ContactPutScreenState extends State<ContactPutScreen> {
   final MyService service = MyService();
-  ContactPostModels? users;
+  ContactPutModels? users;
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  final TextEditingController nameController = TextEditingController();
-  final TextEditingController phoneController = TextEditingController();
-  final TextEditingController statusController = TextEditingController();
-  Future post({
-    required String name,
-    required String phone,
-    required String status,
-  }) async {
-    try {
-      users = await service.createUser(
-        name: name,
-        phone: phone,
-        status: status,
-      );
-    } catch (e) {
-      if (e is DioError) {
-        e.response!.statusCode;
-      }
-    }
-  }
+  final TextEditingController titleController = TextEditingController();
+  final TextEditingController bodyController = TextEditingController();
+  final TextEditingController userIdController = TextEditingController();
 
   Future put({
-    required String name,
-    required String phone,
+    required String title,
+    required String body,
+    required int userId,
   }) async {
     try {
-      users = await service.updateUser(
-        name: name,
-        phone: phone,
-      );
+      users = await service.secondUpdateUser(
+          title: title, body: body, userId: userId);
     } catch (e) {
       if (e is DioError) {
         e.response!.statusCode;
@@ -56,7 +38,7 @@ class _ContactPostScreenState extends State<ContactPostScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('REST API'),
+        title: const Text('SECOND TEST API'),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -66,12 +48,12 @@ class _ContactPostScreenState extends State<ContactPostScreen> {
             child: Column(
               children: [
                 TextFormField(
-                  controller: nameController,
+                  controller: titleController,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    labelText: 'Name',
+                    labelText: 'Title',
                   ),
                   inputFormatters: [
                     FilteringTextInputFormatter.allow(
@@ -80,7 +62,7 @@ class _ContactPostScreenState extends State<ContactPostScreen> {
                   ],
                   validator: (value) {
                     if (value!.isEmpty) {
-                      return 'Enter your name!';
+                      return 'Enter title!';
                     } else {
                       return null;
                     }
@@ -90,16 +72,16 @@ class _ContactPostScreenState extends State<ContactPostScreen> {
                   height: 10,
                 ),
                 TextFormField(
-                  controller: phoneController,
+                  controller: bodyController,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    labelText: 'Phone',
+                    labelText: 'Body',
                   ),
                   validator: (value) {
                     if (value!.isEmpty) {
-                      return 'Enter your number!';
+                      return 'Enter body!';
                     } else {
                       return null;
                     }
@@ -109,16 +91,16 @@ class _ContactPostScreenState extends State<ContactPostScreen> {
                   height: 10,
                 ),
                 TextFormField(
-                  controller: statusController,
+                  controller: userIdController,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    labelText: 'Status',
+                    labelText: 'User ID',
                   ),
                   validator: (value) {
                     if (value!.isEmpty) {
-                      return 'Enter your status!';
+                      return 'Enter User ID!';
                     } else {
                       return null;
                     }
@@ -129,21 +111,11 @@ class _ContactPostScreenState extends State<ContactPostScreen> {
                 ),
                 ElevatedButton(
                   onPressed: () async {
-                    await post(
-                        name: nameController.text,
-                        phone: phoneController.text,
-                        status: statusController.text);
-                    setState(() {
-                      service;
-                    });
-                  },
-                  child: const Text('Post'),
-                ),
-                ElevatedButton(
-                  onPressed: () async {
+                    int userId = int.parse(userIdController.text);
                     await put(
-                      name: nameController.text,
-                      phone: phoneController.text,
+                      title: titleController.text,
+                      body: bodyController.text,
+                      userId: userId,
                     );
                     setState(() {
                       service;
@@ -167,12 +139,12 @@ class _ContactPostScreenState extends State<ContactPostScreen> {
                         children: [
                           const SizedBox(
                             width: 50,
-                            child: Text('Name',
+                            child: Text('Title',
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                 )),
                           ),
-                          SizedBox(width: 220, child: Text(': ${users?.name}'))
+                          SizedBox(width: 220, child: Text(': ${users?.title}'))
                         ],
                       ),
                       Row(
@@ -180,12 +152,12 @@ class _ContactPostScreenState extends State<ContactPostScreen> {
                         children: [
                           const SizedBox(
                             width: 50,
-                            child: Text('Phone',
+                            child: Text('Body',
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                 )),
                           ),
-                          SizedBox(width: 220, child: Text(': ${users?.phone}'))
+                          SizedBox(width: 220, child: Text(': ${users?.body}'))
                         ],
                       ),
                       Row(
@@ -193,13 +165,13 @@ class _ContactPostScreenState extends State<ContactPostScreen> {
                         children: [
                           const SizedBox(
                             width: 50,
-                            child: Text('Status',
+                            child: Text('User ID',
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                 )),
                           ),
                           SizedBox(
-                              width: 220, child: Text(': ${users?.status}'))
+                              width: 220, child: Text(': ${users?.userId}'))
                         ],
                       ),
                     ],
@@ -211,7 +183,7 @@ class _ContactPostScreenState extends State<ContactPostScreen> {
                       shape: BoxShape.circle, color: Color(0xff6200EE)),
                   child: IconButton(
                     onPressed: () {
-                      Navigator.of(context).pushNamed('/contact-put');
+                      Navigator.of(context).pushNamed('/image-generator');
                     },
                     icon: const Icon(Icons.arrow_forward_ios_rounded),
                     color: Colors.white,

@@ -1,5 +1,5 @@
-import 'package:demo_flutter_app/models/contact_put_models.dart';
-import 'package:demo_flutter_app/services.dart';
+import 'package:demo_flutter_app/model/contact_put_models.dart';
+import 'package:demo_flutter_app/model/api/services_api.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

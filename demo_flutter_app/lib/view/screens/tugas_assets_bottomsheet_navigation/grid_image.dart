@@ -1,5 +1,5 @@
-import 'package:demo_flutter_app/bloc/gallery/gallery_bloc.dart';
-import 'package:demo_flutter_app/screens/tugas_assets_bottomsheet_navigation/new_sheet.dart';
+import 'package:demo_flutter_app/view/screens/tugas_assets_bottomsheet_navigation/gallery_view_model/gallery_bloc.dart';
+import 'package:demo_flutter_app/view/screens/tugas_assets_bottomsheet_navigation/new_sheet_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

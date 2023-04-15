@@ -1,12 +1,12 @@
-import 'package:demo_flutter_app/screens/tugas_form/new_contact.dart';
-import 'package:demo_flutter_app/screens/tugas_storage/login_screen.dart';
+import 'package:demo_flutter_app/view/screens/tugas_storage/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../models/form_detail.dart';
-import '../../providers/new_contact_providers.dart';
-import 'detail_contact.dart';
+import '../../../model/form_detail_models.dart';
+import '../tugas_form/detail_contact_screen.dart';
+import '../tugas_form/new_contact_screen.dart';
+import '../tugas_form/new_contact_view_model.dart';
 
 class ListContact extends StatefulWidget {
   const ListContact({

@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:demo_flutter_app/models/data_gallery.dart';
+import 'package:demo_flutter_app/model/data_gallery_models.dart';
 part 'gallery_event.dart';
 part 'gallery_state.dart';
 
