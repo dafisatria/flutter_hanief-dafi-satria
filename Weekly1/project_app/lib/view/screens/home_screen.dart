@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/about_us_widget.dart';
+import '../widgets/drawer_widget.dart';
+import '../widgets/email_field.dart';
+import '../widgets/first_name_field.dart';
+import '../widgets/last_name_field.dart';
+import '../widgets/message_field.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -20,8 +27,10 @@ class _HomeScreenState extends State<HomeScreen> {
         centerTitle: true,
         backgroundColor: Colors.blueGrey[100],
       ),
+      drawer: const DrawerWidget(),
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Stack(
               alignment: Alignment.bottomLeft,
@@ -91,96 +100,26 @@ class _HomeScreenState extends State<HomeScreen> {
                       Row(
                         children: [
                           Expanded(
-                            child: TextField(
-                              controller: firstNameController,
-                              decoration: InputDecoration(
-                                labelText: 'First name *',
-                                labelStyle:
-                                    const TextStyle(color: Colors.black),
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                filled: true,
-                                fillColor: Colors.grey[300],
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide:
-                                      const BorderSide(color: Colors.black),
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                              ),
-                              cursorColor: Colors.black,
-                            ),
+                            child: FirstNameField(
+                                firstNameController: firstNameController),
                           ),
                           const SizedBox(
                             width: 10,
                           ),
                           Expanded(
-                            child: TextField(
-                              controller: lastNameController,
-                              keyboardType: TextInputType.name,
-                              decoration: InputDecoration(
-                                labelText: 'Last name',
-                                labelStyle:
-                                    const TextStyle(color: Colors.black),
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                filled: true,
-                                fillColor: Colors.grey[300],
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide:
-                                      const BorderSide(color: Colors.black),
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                              ),
-                              cursorColor: Colors.black,
-                            ),
+                            child: LastNameField(
+                                lastNameController: lastNameController),
                           ),
                         ],
                       ),
                       const SizedBox(
                         height: 20,
                       ),
-                      TextField(
-                        controller: emailController,
-                        keyboardType: TextInputType.name,
-                        decoration: InputDecoration(
-                          labelText: 'Email*',
-                          labelStyle: const TextStyle(color: Colors.black),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          filled: true,
-                          fillColor: Colors.grey[300],
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(color: Colors.black),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                        ),
-                        cursorColor: Colors.black,
-                      ),
+                      EmailField(emailController: emailController),
                       const SizedBox(
                         height: 20,
                       ),
-                      TextField(
-                        controller: messageController,
-                        keyboardType: TextInputType.name,
-                        decoration: InputDecoration(
-                          labelText: 'What can we help you with?',
-                          labelStyle: const TextStyle(color: Colors.black),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          filled: true,
-                          fillColor: Colors.grey[300],
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(color: Colors.black),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                        ),
-                        cursorColor: Colors.black,
-                        maxLines: 3,
-                      ),
+                      MessageField(messageController: messageController),
                     ],
                   ),
                   const SizedBox(
@@ -224,6 +163,29 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  Text(
+                    'About Us',
+                    style: TextStyle(
+                      fontSize: 28,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  Text(
+                    'Our Best Direction',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const AboutUsWidget(),
           ],
         ),
       ),
