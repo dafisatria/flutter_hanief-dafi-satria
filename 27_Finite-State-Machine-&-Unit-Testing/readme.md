@@ -1,0 +1,4 @@
+## Resume Materi KMFlutter - Finite State Machine
+- Digunakan untuk mengatur beberapa state. Terdapat 3 proses, yaitu iddle, running, dan error. Iddle saat tidak ada proses, running saat ada proses, error saat proses gagal dijalankan.
+- Saat membuat sebuah aplikasi, kita perlu memastikan apakah aplikasi yang kita buat bisa berjalan dengan baik. Maka dari itu perlu dilakukan unit test. Unit yang dimaksud yaitu fungsi atau method. Unit test bisa dilakukan secara manual ataupun automated.
+- Saat melakukan test, ada beberapa proses yang terikat dengan sistem eksternal yang dapat mempengaruhi proses pengujian. Karena itu kita memerlukan mocking. Mocking berguna sebagai peniru dari object yang memiliki input dan output sama dengan yang asli.
