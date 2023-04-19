@@ -1,4 +1,3 @@
-import 'package:demo_flutter_app/screens/tugas_form/new_contact_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
@@ -6,6 +5,7 @@ import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
 import 'list_contact_screen.dart';
+import 'new_contact_view_model.dart';
 
 class MyContact extends StatefulWidget {
   const MyContact({super.key});
