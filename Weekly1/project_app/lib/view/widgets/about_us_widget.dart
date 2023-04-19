@@ -18,8 +18,8 @@ class AboutUsWidget extends StatelessWidget {
               padding: const EdgeInsets.all(10),
               child: Column(
                 children: [
-                  Image.network(
-                    'https://kprofiles.com/wp-content/uploads/2019/01/C6FEA901-3EDF-47A4-BD76-FF33A771BE7B-533x800.jpeg',
+                  Image.asset(
+                    'assets/yeji.jpeg',
                     width: 100,
                   ),
                   const Text(
@@ -46,8 +46,8 @@ class AboutUsWidget extends StatelessWidget {
               padding: const EdgeInsets.all(10),
               child: Column(
                 children: [
-                  Image.network(
-                    'https://kprofiles.com/wp-content/uploads/2019/01/C7B868EA-A825-4028-9C15-CD41AD0A6D73-533x800.jpeg',
+                  Image.asset(
+                    'assets/lia.jpeg',
                     width: 100,
                   ),
                   const Text(
@@ -74,8 +74,8 @@ class AboutUsWidget extends StatelessWidget {
               padding: const EdgeInsets.all(10),
               child: Column(
                 children: [
-                  Image.network(
-                    'https://kprofiles.com/wp-content/uploads/2019/01/B6635DC6-675D-4BDA-926B-ED0C4823904E-533x800.jpeg',
+                  Image.asset(
+                    'assets/ryujin.jpeg',
                     width: 100,
                   ),
                   const Text(
@@ -102,8 +102,8 @@ class AboutUsWidget extends StatelessWidget {
               padding: const EdgeInsets.all(10),
               child: Column(
                 children: [
-                  Image.network(
-                    'https://kprofiles.com/wp-content/uploads/2019/01/EB01DCA5-7096-4338-AA89-1AF72B4AC283-533x800.jpeg',
+                  Image.asset(
+                    'assets/chaeryeong.jpeg',
                     width: 100,
                   ),
                   const Text(
@@ -130,8 +130,8 @@ class AboutUsWidget extends StatelessWidget {
               padding: const EdgeInsets.all(10),
               child: Column(
                 children: [
-                  Image.network(
-                    'https://kprofiles.com/wp-content/uploads/2019/01/59492EA5-8747-4447-9379-49D91C333B1A-533x800.jpeg',
+                  Image.asset(
+                    'assets/yuna.jpeg',
                     width: 100,
                   ),
                   const Text(
