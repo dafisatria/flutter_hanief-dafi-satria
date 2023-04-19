@@ -1,0 +1,4 @@
+## Resume Materi KMFlutter - UI Testing
+- Dalam membangun suatu aplikasi, kita sangat memerlukan testing agar aplikasi bisa berjalan sesuai target yang sudah dirancang diawal. Didalam flutter kita bisa menggunakan widget testing untuk menjalankan script yang sudah kita buat agar bisa melakukan testing secara otomatis.
+- Didalam flutter sendiri package sudah terinstall sedari kita membuat aplikasi project kita. Dalam membuat script testing, kita perlu menaruhnya kedalam folder test yang ada pada project yang sudah kita bangun. Untuk format nama harus diakhiri dengan ***_test.dart***.
+- Didalam file testing, kita akan menaruh seluruh script kita kedalam fungsi main. Untuk membuat tiap case test kita perlu memberi widget testWidgets. Untuk menjalankan script, kita hanya perlu menjalankan perintah ***flutter test*** pada terminal.
