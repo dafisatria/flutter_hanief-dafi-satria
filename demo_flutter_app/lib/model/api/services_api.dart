@@ -3,6 +3,8 @@ import 'package:demo_flutter_app/model/contact_put_models.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/rendering.dart';
 
+import '../food_models.dart';
+
 class MyService {
   final Dio dio = Dio();
   String svg = '';
@@ -75,6 +77,17 @@ class MyService {
       debugPrint(response.data.toString());
       svg = response.data;
       return svg;
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  Future<List<FoodModel>> fetchFood() async {
+    try {
+      final Response response = await dio.get(
+          'https://my-json-server.typicode.com/hadihammurabi/flutter-webservice/foods');
+      debugPrint(response.data.toString());
+      return (response.data as List).map((e) => FoodModel.fromJson(e)).toList();
     } catch (e) {
       rethrow;
     }
