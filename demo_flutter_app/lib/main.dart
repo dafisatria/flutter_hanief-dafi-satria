@@ -6,12 +6,14 @@ import 'package:demo_flutter_app/view/screens/tugas_finite_state/list_food_scree
 import 'package:demo_flutter_app/view/screens/tugas_finite_state/list_food_view_model.dart';
 import 'package:demo_flutter_app/view/screens/tugas_form/list_contact_screen.dart';
 import 'package:demo_flutter_app/view/screens/tugas_form/new_contact_screen.dart';
+import 'package:demo_flutter_app/view/screens/tugas_form/new_contact_view_model.dart';
 import 'package:demo_flutter_app/view/screens/tugas_rest_api/soal_eksplorasi/image_generator_form_screen.dart';
 import 'package:demo_flutter_app/view/screens/tugas_rest_api/soal_prioritas_1/contact_post_request_screen.dart';
 import 'package:demo_flutter_app/view/screens/tugas_rest_api/soal_prioritas_1/contact_post_request_view_model.dart';
 import 'package:demo_flutter_app/view/screens/tugas_rest_api/soal_prioritas_1/contact_put_request_screen.dart';
 import 'package:demo_flutter_app/view/screens/tugas_rest_api/soal_prioritas_2/image_generator_screen.dart';
 import 'package:demo_flutter_app/view/screens/tugas_storage/login_screen.dart';
+import 'package:demo_flutter_app/view/screens/tugas_ui_test/dummy_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -26,29 +28,20 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(
-          create: (_) => FoodProvider(),
+    return MaterialApp(
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSwatch().copyWith(
+          primary: const Color(0xff6200EE),
         ),
-        ChangeNotifierProvider(
-          create: (_) => ContactPostRequestViewModel(),
+        floatingActionButtonTheme: const FloatingActionButtonThemeData(
+          backgroundColor: Color(0xff6200EE),
         ),
-      ],
-      child: MaterialApp(
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSwatch().copyWith(
-            primary: const Color(0xff6200EE),
-          ),
-          floatingActionButtonTheme: const FloatingActionButtonThemeData(
-            backgroundColor: Color(0xff6200EE),
-          ),
-        ),
-        debugShowCheckedModeBanner: false,
-        routes: {
-          '/': (_) => const ContactPostScreen(),
-        },
       ),
+      debugShowCheckedModeBanner: false,
+      routes: {
+        '/': (_) => const DummyScreen(),
+        '/Contacts': (_) => const MyContact(),
+      },
     );
   }
 }
